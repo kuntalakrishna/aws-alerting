@@ -1,0 +1,454 @@
+{
+   "Records": [
+     {
+       "eventVersion": "1.05",
+       "userIdentity": {
+         "type": "AssumedRole",
+         "principalId": "AROAYS7OPRRI7TXQ2ZLXB:krishna.kuntala",
+         "arn": "arn:aws:sts::<your-account-id>:assumed-role/Admin/krishna.kuntala",
+         "accountId": "<your-account-id>",
+         "accessKeyId": "ASIAYS7OPRRIW54EPLO3",
+         "sessionContext": {
+           "sessionIssuer": {
+             "type": "Role",
+             "principalId": "AROAYS7OPRRI7TXQ2ZLXB",
+             "arn": "arn:aws:iam::<your-account-id>:role/Admin",
+             "accountId": "<your-account-id>",
+             "userName": "Admin"
+           },
+           "webIdFederationData": {},
+           "attributes": {
+             "mfaAuthenticated": "true",
+             "creationDate": "2019-09-11T16:45:42Z"
+           }
+         }
+       },
+       "eventTime": "2019-09-11T16:59:45Z",
+       "eventSource": "ssm.amazonaws.com",
+       "eventName": "GetParameter",
+       "awsRegion": "eu-west-2",
+       "sourceIPAddress": "148.252.244.102",
+       "userAgent": "aws-internal/3 aws-sdk-java/1.11.621 Linux/4.9.184-0.1.ac.235.83.329.metal1.x86_64 OpenJDK_64-Bit_Server_VM/25.222-b10 java/1.8.0_222 vendor/Oracle_Corporation",
+       "requestParameters": {
+         "name": "/environment/preprod/vsc/database_password",
+         "withDecryption": true
+       },
+       "responseElements": null,
+       "requestID": "e723f12d-4fc3-4003-a91c-70a030d53364",
+       "eventID": "c202d53c-7f3c-46a2-925d-eeaac47576fa",
+       "resources": [
+         {
+           "accountId": "<your-account-id>",
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/preprod/vsc/database_password"
+         }
+       ],
+       "eventType": "AwsApiCall",
+       "recipientAccountId": "<your-account-id>"
+     },
+     {
+       "eventVersion": "1.05",
+       "userIdentity": {
+         "type": "AssumedRole",
+         "principalId": "AROAYS7OPRRI7TXQ2ZLXB:krishna.kuntala",
+         "arn": "arn:aws:sts::<your-account-id>:assumed-role/Admin/krishna.kuntala",
+         "accountId": "<your-account-id>",
+         "accessKeyId": "ASIAYS7OPRRIW54EPLO3",
+         "sessionContext": {
+           "sessionIssuer": {
+             "type": "Role",
+             "principalId": "AROAYS7OPRRI7TXQ2ZLXB",
+             "arn": "arn:aws:iam::<your-account-id>:role/Admin",
+             "accountId": "<your-account-id>",
+             "userName": "Admin"
+           },
+           "webIdFederationData": {},
+           "attributes": {
+             "mfaAuthenticated": "true",
+             "creationDate": "2019-09-11T16:45:42Z"
+           }
+         }
+       },
+       "eventTime": "2019-09-11T16:59:45Z",
+       "eventSource": "ssm.amazonaws.com",
+       "eventName": "GetParameter",
+       "awsRegion": "eu-west-2",
+       "sourceIPAddress": "148.252.244.102",
+       "userAgent": "aws-internal/3 aws-sdk-java/1.11.621 Linux/4.9.184-0.1.ac.235.83.329.metal1.x86_64 OpenJDK_64-Bit_Server_VM/25.222-b10 java/1.8.0_222 vendor/Oracle_Corporation",
+       "requestParameters": {
+         "name": "/environment/uat/vsc/database_password",
+         "withDecryption": true
+       },
+       "responseElements": null,
+       "requestID": "e723f12d-4fc3-4003-a91c-70a030d53364",
+       "eventID": "d432d54f-7f3c-46a2-925d-eeaac47576fa",
+       "resources": [
+         {
+           "accountId": "<your-account-id>",
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/uat/vsc/database_password"
+         }
+       ],
+       "eventType": "AwsApiCall",
+       "recipientAccountId": "<your-account-id>"
+     },
+     {
+       "eventVersion": "1.05",
+       "userIdentity": {
+         "type": "AssumedRole",
+         "principalId": "AROAYS7OPRRI7TXQ2ZLXB:krishna.kuntala",
+         "arn": "arn:aws:sts::<your-account-id>:assumed-role/Admin/krishna.kuntala",
+         "accountId": "<your-account-id>",
+         "accessKeyId": "ASIAYS7OPRRIW54EPLO3",
+         "sessionContext": {
+           "sessionIssuer": {
+             "type": "Role",
+             "principalId": "AROAYS7OPRRI7TXQ2ZLXB",
+             "arn": "arn:aws:iam::<your-account-id>:role/Admin",
+             "accountId": "<your-account-id>",
+             "userName": "Admin"
+           },
+           "webIdFederationData": {},
+           "attributes": {
+             "mfaAuthenticated": "true",
+             "creationDate": "2019-09-11T16:45:42Z"
+           }
+         }
+       },
+       "eventTime": "2019-09-11T16:59:41Z",
+       "eventSource": "ssm.amazonaws.com",
+       "eventName": "GetParameter",
+       "awsRegion": "eu-west-2",
+       "sourceIPAddress": "148.252.244.102",
+       "userAgent": "aws-internal/3 aws-sdk-java/1.11.621 Linux/4.9.184-0.1.ac.235.83.329.metal1.x86_64 OpenJDK_64-Bit_Server_VM/25.222-b10 java/1.8.0_222 vendor/Oracle_Corporation",
+       "requestParameters": {
+         "name": "/environment/preprod/vsc/ca_cert",
+         "withDecryption": true
+       },
+       "responseElements": null,
+       "requestID": "9dfb8eec-dcb1-4867-8802-cfcae8740f0a",
+       "eventID": "ae40d9c4-7098-4ca2-bca3-390d03982f8c",
+       "resources": [
+         {
+           "accountId": "<your-account-id>",
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/preprod/vsc/ca_cert"
+         }
+       ],
+       "eventType": "AwsApiCall",
+       "recipientAccountId": "<your-account-id>"
+     },
+     {
+       "eventVersion": "1.05",
+       "userIdentity": {
+         "type": "AssumedRole",
+         "principalId": "AROAYS7OPRRI7TXQ2ZLXB:krishna.kuntala",
+         "arn": "arn:aws:sts::<your-account-id>:assumed-role/Admin/krishna.kuntala",
+         "accountId": "<your-account-id>",
+         "accessKeyId": "ASIAYS7OPRRIQWWUJK4B",
+         "sessionContext": {
+           "sessionIssuer": {
+             "type": "Role",
+             "principalId": "AROAYS7OPRRI7TXQ2ZLXB",
+             "arn": "arn:aws:iam::<your-account-id>:role/Admin",
+             "accountId": "<your-account-id>",
+             "userName": "Admin"
+           },
+           "webIdFederationData": {},
+           "attributes": {
+             "mfaAuthenticated": "true",
+             "creationDate": "2019-09-11T16:45:42Z"
+           }
+         }
+       },
+       "eventTime": "2019-09-11T17:01:35Z",
+       "eventSource": "lambda.amazonaws.com",
+       "eventName": "ListEventSourceMappings20150331",
+       "awsRegion": "eu-west-2",
+       "sourceIPAddress": "148.252.244.102",
+       "userAgent": "aws-internal/3 aws-sdk-java/1.11.590 Linux/4.9.152-0.1.ac.221.79.329.metal1.x86_64 OpenJDK_64-Bit_Server_VM/25.222-b10 java/1.8.0_222 vendor/Oracle_Corporation",
+       "requestParameters": {
+         "functionName": "arn:aws:lambda:eu-west-2:<your-account-id>:function:slack-channel-alerts-dev-active_stacks"
+       },
+       "responseElements": null,
+       "requestID": "b94a7936-01da-4865-9def-86a6ec0e4d9d",
+       "eventID": "33fb6390-37be-40f7-9018-3f2ddd574748",
+       "eventType": "AwsApiCall",
+       "recipientAccountId": "<your-account-id>"
+     },
+     {
+       "eventVersion": "1.05",
+       "userIdentity": {
+         "type": "AssumedRole",
+         "principalId": "AROAYS7OPRRIXMSA3JYZP:beb0beff-8b7f-4b0b-b0cb-dec3fdf15656",
+         "arn": "arn:aws:sts::<your-account-id>:assumed-role/virtual-smartcard-test-task-role/beb0beff-8b7f-4b0b-b0cb-dec3fdf15656",
+         "accountId": "<your-account-id>",
+         "accessKeyId": "ASIAYS7OPRRI5JHRWKEV",
+         "sessionContext": {
+           "sessionIssuer": {
+             "type": "Role",
+             "principalId": "AROAYS7OPRRIXMSA3JYZP",
+             "arn": "arn:aws:iam::<your-account-id>:role/virtual-smartcard-test-task-role",
+             "accountId": "<your-account-id>",
+             "userName": "virtual-smartcard-test-task-role"
+           },
+           "webIdFederationData": {},
+           "attributes": {
+             "mfaAuthenticated": "false",
+             "creationDate": "2019-09-17T22:27:06Z"
+           }
+         }
+       },
+       "eventTime": "2019-09-17T22:27:44Z",
+       "eventSource": "ssm.amazonaws.com",
+       "eventName": "GetParameter",
+       "awsRegion": "eu-west-2",
+       "sourceIPAddress": "18.130.50.227",
+       "userAgent": "aws-cli/1.16.239 Python/2.7.12 Linux/4.14.133-113.112.amzn2.x86_64 exec-env/AWS_ECS_FARGATE botocore/1.12.229",
+       "requestParameters": {
+         "name": "/environment/test/vsc/ca_cert",
+         "withDecryption": true
+       },
+       "responseElements": null,
+       "requestID": "46b616c0-2fb6-4fe6-ae53-a2b66c3bd444",
+       "eventID": "142644a8-ad42-49e9-a3cb-da4964db07d0",
+       "resources": [
+         {
+           "accountId": "<your-account-id>",
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/test/vsc/ca_cert"
+         }
+       ],
+       "eventType": "AwsApiCall",
+       "recipientAccountId": "<your-account-id>"
+     },
+     {
+       "eventVersion": "1.05",
+       "userIdentity": {
+         "type": "AssumedRole",
+         "principalId": "AROAYS7OPRRIXMSA3JYZP:beb0beff-8b7f-4b0b-b0cb-dec3fdf15656",
+         "arn": "arn:aws:sts::<your-account-id>:assumed-role/virtual-smartcard-test-task-role/beb0beff-8b7f-4b0b-b0cb-dec3fdf15656",
+         "accountId": "<your-account-id>",
+         "accessKeyId": "ASIAYS7OPRRI5JHRWKEV",
+         "sessionContext": {
+           "sessionIssuer": {
+             "type": "Role",
+             "principalId": "AROAYS7OPRRIXMSA3JYZP",
+             "arn": "arn:aws:iam::<your-account-id>:role/virtual-smartcard-test-task-role",
+             "accountId": "<your-account-id>",
+             "userName": "virtual-smartcard-test-task-role"
+           },
+           "webIdFederationData": {},
+           "attributes": {
+             "mfaAuthenticated": "false",
+             "creationDate": "2019-09-17T22:27:06Z"
+           }
+         }
+       },
+       "eventTime": "2019-09-17T22:27:46Z",
+       "eventSource": "ssm.amazonaws.com",
+       "eventName": "GetParameter",
+       "awsRegion": "eu-west-2",
+       "sourceIPAddress": "18.130.50.227",
+       "userAgent": "aws-cli/1.16.239 Python/2.7.12 Linux/4.14.133-113.112.amzn2.x86_64 exec-env/AWS_ECS_FARGATE botocore/1.12.229",
+       "requestParameters": {
+         "name": "/environment/test/vsc/private_key",
+         "withDecryption": true
+       },
+       "responseElements": null,
+       "requestID": "e54004ec-cfd3-4dab-859c-cc4bcef45d44",
+       "eventID": "df0d3387-21a5-44d4-a7ab-84d0b573d8b8",
+       "resources": [
+         {
+           "accountId": "<your-account-id>",
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/test/vsc/private_key"
+         }
+       ],
+       "eventType": "AwsApiCall",
+       "recipientAccountId": "<your-account-id>"
+     },
+     {
+       "eventVersion": "1.05",
+       "userIdentity": {
+         "type": "AssumedRole",
+         "principalId": "AROAYS7OPRRI7TXQ2ZLXB:botocore-session-1568757893",
+         "arn": "arn:aws:sts::<your-account-id>:assumed-role/Admin/botocore-session-1568757893",
+         "accountId": "<your-account-id>",
+         "accessKeyId": "ASIAJHMVSQXBXZBQXV4Q",
+         "sessionContext": {
+           "sessionIssuer": {
+             "type": "Role",
+             "principalId": "AROAYS7OPRRI7TXQ2ZLXB",
+             "arn": "arn:aws:iam::<your-account-id>:role/Admin",
+             "accountId": "<your-account-id>",
+             "userName": "Admin"
+           },
+           "webIdFederationData": {},
+           "attributes": {
+             "mfaAuthenticated": "false",
+             "creationDate": "2019-09-17T22:04:54Z"
+           }
+         },
+         "invokedBy": "cloudformation.amazonaws.com"
+       },
+       "eventTime": "2019-09-17T22:22:25Z",
+       "eventSource": "ssm.amazonaws.com",
+       "eventName": "GetParameters",
+       "awsRegion": "eu-west-2",
+       "sourceIPAddress": "cloudformation.amazonaws.com",
+       "userAgent": "cloudformation.amazonaws.com",
+       "requestParameters": {
+         "names": [
+           "/environment/test/vsc/database_password:1"
+         ],
+         "withDecryption": true
+       },
+       "responseElements": null,
+       "requestID": "03fe2e74-7f36-4033-8271-2b9bbb313484",
+       "eventID": "76ae27de-738d-4854-99b5-e67dbb9b09e4",
+       "resources": [
+         {
+           "accountId": "<your-account-id>",
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/test/vsc/database_password"
+         }
+       ],
+       "eventType": "AwsApiCall",
+       "recipientAccountId": "<your-account-id>"
+     },
+     {
+       "eventVersion": "1.05",
+       "userIdentity": {
+         "type": "AssumedRole",
+         "principalId": "AROAYS7OPRRI7TXQ2ZLXB:botocore-session-1568757893",
+         "arn": "arn:aws:sts::<your-account-id>:assumed-role/Admin/botocore-session-1568757893",
+         "accountId": "<your-account-id>",
+         "accessKeyId": "ASIAJHMVSQXBXZBQXV4Q",
+         "sessionContext": {
+           "sessionIssuer": {
+             "type": "Role",
+             "principalId": "AROAYS7OPRRI7TXQ2ZLXB",
+             "arn": "arn:aws:iam::<your-account-id>:role/Admin",
+             "accountId": "<your-account-id>",
+             "userName": "Admin"
+           },
+           "webIdFederationData": {},
+           "attributes": {
+             "mfaAuthenticated": "false",
+             "creationDate": "2019-09-17T22:04:54Z"
+           }
+         },
+         "invokedBy": "cloudformation.amazonaws.com"
+       },
+       "eventTime": "2019-09-17T22:13:04Z",
+       "eventSource": "ssm.amazonaws.com",
+       "eventName": "GetParameters",
+       "awsRegion": "eu-west-2",
+       "sourceIPAddress": "cloudformation.amazonaws.com",
+       "userAgent": "cloudformation.amazonaws.com",
+       "requestParameters": {
+         "names": [
+           "/environment/test/vsc/database_password:1"
+         ],
+         "withDecryption": true
+       },
+       "responseElements": null,
+       "requestID": "651d1036-153d-4cc8-bd84-f30fe0dbcea5",
+       "eventID": "99945ecd-32a6-425d-a026-4ab7f96d4e0d",
+       "resources": [
+         {
+           "accountId": "<your-account-id>",
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/test/vsc/database_password"
+         }
+       ],
+       "eventType": "AwsApiCall",
+       "recipientAccountId": "<your-account-id>"
+     },
+     {
+       "eventVersion": "1.05",
+       "userIdentity": {
+         "type": "AssumedRole",
+         "principalId": "AROAYS7OPRRI7TXQ2ZLXB:krishna.kuntala",
+         "arn": "arn:aws:sts::<your-account-id>:assumed-role/Admin/krishna.kuntala",
+         "accountId": "<your-account-id>",
+         "accessKeyId": "ASIAYS7OPRRITJQDSW45",
+         "sessionContext": {
+           "attributes": {
+             "mfaAuthenticated": "true",
+             "creationDate": "2019-09-18T20:23:31Z"
+           },
+           "sessionIssuer": {
+             "type": "Role",
+             "principalId": "AROAYS7OPRRI7TXQ2ZLXB",
+             "arn": "arn:aws:iam::<your-account-id>:role/Admin",
+             "accountId": "<your-account-id>",
+             "userName": "Admin"
+           }
+         }
+       },
+       "eventTime": "2019-09-18T21:05:51Z",
+       "eventSource": "kms.amazonaws.com",
+       "eventName": "DescribeKey",
+       "awsRegion": "eu-west-2",
+       "sourceIPAddress": "78.148.124.180",
+       "userAgent": "aws-internal/3 aws-sdk-java/1.11.590 Linux/4.9.184-0.1.ac.235.83.329.metal1.x86_64 OpenJDK_64-Bit_Server_VM/25.212-b03 java/1.8.0_212 vendor/Oracle_Corporation",
+       "requestParameters": {
+         "keyId": "09eb5726-3723-400d-8008-150652ce8838"
+       },
+       "responseElements": null,
+       "requestID": "6955338d-a207-4df2-aa8a-6443b900fd82",
+       "eventID": "445f1e44-e722-4c3b-a2f6-b06ce9c8d1f2",
+       "readOnly": true,
+       "resources": [
+         {
+           "ARN": "arn:aws:kms:eu-west-2:<your-account-id>:key/09eb5726-3723-400d-8008-150652ce8838",
+           "accountId": "<your-account-id>",
+           "type": "AWS::KMS::Key"
+         }
+       ],
+       "eventType": "AwsApiCall",
+       "recipientAccountId": "<your-account-id>"
+     },
+     {
+       "eventVersion": "1.05",
+       "userIdentity": {
+         "type": "AssumedRole",
+         "principalId": "AROAYS7OPRRI7TXQ2ZLXB:krishna.kuntala",
+         "arn": "arn:aws:sts::<your-account-id>:assumed-role/Admin/krishna.kuntala",
+         "accountId": "<your-account-id>",
+         "accessKeyId": "ASIAYS7OPRRITJQDSW45",
+         "sessionContext": {
+           "attributes": {
+             "mfaAuthenticated": "true",
+             "creationDate": "2019-09-18T20:23:31Z"
+           },
+           "sessionIssuer": {
+             "type": "Role",
+             "principalId": "AROAYS7OPRRI7TXQ2ZLXB",
+             "arn": "arn:aws:iam::<your-account-id>:role/Admin",
+             "accountId": "<your-account-id>",
+             "userName": "Admin"
+           }
+         }
+       },
+       "eventTime": "2019-09-18T21:05:07Z",
+       "eventSource": "kms.amazonaws.com",
+       "eventName": "GetKeyPolicy",
+       "awsRegion": "eu-west-2",
+       "sourceIPAddress": "78.148.124.180",
+       "userAgent": "aws-internal/3 aws-sdk-java/1.11.590 Linux/4.9.184-0.1.ac.235.83.329.metal1.x86_64 OpenJDK_64-Bit_Server_VM/25.212-b03 java/1.8.0_212 vendor/Oracle_Corporation",
+       "requestParameters": {
+         "keyId": "ee20d9d7-505d-46d4-b086-5a80467e2000",
+         "policyName": "default"
+       },
+       "responseElements": null,
+       "requestID": "d10fdd0a-443a-4277-a2b2-cd19075ca6e4",
+       "eventID": "9bb911b0-08fb-4e04-a877-156af3e51b61",
+       "readOnly": true,
+       "resources": [
+         {
+           "ARN": "arn:aws:kms:eu-west-2:<your-account-id>:key/ee20d9d7-505d-46d4-b086-5a80467e2000",
+           "accountId": "<your-account-id>",
+           "type": "AWS::KMS::Key"
+         }
+       ],
+       "eventType": "AwsApiCall",
+       "recipientAccountId": "<your-account-id>"
+     }
+   ]
+ }

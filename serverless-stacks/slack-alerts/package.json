@@ -1,0 +1,13 @@
+{
+  "name": "cloudtrail-listener",
+  "version": "0.1.0",
+  "description": "Cloudtrail filter lambda",
+  "author": "Krishna Kuntala",
+  "main": "cloudtrail-listener/cloudtrail-listener.js",
+  "dependencies": {
+    "async": "^0.9.2",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {},
+  "license": "ISC"
+}

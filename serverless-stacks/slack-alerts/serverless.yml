@@ -1,0 +1,294 @@
+service: slack-channel-alerts
+provider:
+  name: aws
+  runtime: python3.7
+  versionFunctions: false
+
+functions:
+  ##### CloudTrail Listener Lambda : START #####
+  cloudtrailListener:
+    handler: cloudtrail-listener/cloudtrailListener.handler
+    runtime: nodejs10.x
+    events:
+      - s3:
+          bucket: !ImportValue cloudTrailS3Bucket
+          event: s3:ObjectCreated:*
+          existing: true
+    environment:
+      ALERTS_PUBLISH_SNS_ARN: 
+        Fn::Join:
+            - ':'
+            - 
+              - arn:aws:sns
+              - !Ref AWS::Region
+              - !Ref AWS::AccountId
+              - sns_slack_alerts
+    role: cloudtrailListenerLambdaRole
+  ##### CloudTrail Listener Lambda : END #####
+
+  ##### Alerts Lambda : START #####
+  alerts:
+    handler: alerts/alerts.lambda_handler
+    events: 
+      - sns: 
+          topicName: sns_slack_alerts
+          displayName: Slack alerts Topic
+    environment:
+      SLACK_CHANNEL: ${env:SLACK_CHANNEL}
+      SLACK_USER: AWS
+      SLACK_WEBHOOK_URL: ${env:SLACK_WEBHOOK_URL}
+    role: alertsLambdaRole
+  ##### Alerts Lambda : END #####
+  
+  ##### CloudFormation Active Stacks : START #####
+  activeStacks:
+    handler: cloudformation-active-stacks/active_stacks.lambda_handler
+    events:
+      - schedule:
+          description: 'Clodwatch event rule to be triggered 18:00 everyday'
+          rate: cron(0/60 18 * * ? *)
+          input:
+            inputMessage: ":rotating_light:*Stacks active on AWS*:rotating_light:"
+      - schedule:
+          description: 'Clodwatch event rule to be triggered 22:00 everyday'
+          rate: cron(0/60 22 * * ? *)
+          input:
+            inputMessage: ":rotating_light::rotating_light::rotating_light::rotating_light:*Stacks still active on AWS*:rotating_light::rotating_light::rotating_light::rotating_light:"
+    environment:
+      EXCLUDED_STACKS: ''
+      SLACK_ALERTS_SNS_ARN: 
+        Fn::Join:
+        - ':'
+        -
+          - arn:aws:sns
+          - !Ref AWS::Region
+          - !Ref AWS::AccountId
+          - sns_slack_alerts
+    role: activeStacksLambdaRole
+  ##### CloudFormation Active Stacks : END #####
+
+resources:
+  Resources:
+    ##### CloudTrail Listener Lambda : START #####
+    cloudtrailListenerLambdaRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName:
+          Fn::Join:
+          - '-'
+          -
+            - ${self:service}
+            - ${opt:stage}
+            - !Ref AWS::Region
+            - cloudtrailLambdaRole
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action: sts:AssumeRole
+        Policies:
+          - PolicyName: 
+              Fn::Join:
+              - '-'
+              -
+                - ${opt:stage}
+                - ${self:service}
+                - !Ref AWS::Region
+                - cloudtrailListenerLambdaPolicy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - logs:CreateLogGroup
+                    - logs:CreateLogStream
+                    - logs:PutLogEvents
+                  Resource:
+                    - Fn::Join:
+                      - ':'
+                      -
+                        - arn:aws:logs
+                        - !Ref AWS::Region
+                        - !Ref AWS::AccountId
+                        - log-group:/aws/lambda/slack-channel-alerts-${opt:stage}*:*:*
+                - Effect: Allow
+                  Action:
+                    - s3:GetObject
+                  Resource:
+                    - Fn::Join:
+                      - '/'
+                      -
+                        - Fn::Join:
+                          - ':'
+                          -
+                            - 'arn:aws:s3::'
+                            - !ImportValue cloudTrailS3Bucket
+                        - '*'
+                - Effect: Allow
+                  Action:
+                    - sns:Publish
+                  Resource:
+                    Fn::Join:
+                    - ':'
+                    -
+                      - arn:aws:sns
+                      - !Ref AWS::Region
+                      - !Ref AWS::AccountId
+                      - sns_slack_alerts
+    CloudtrailListenerLogGroup:
+      Properties:
+        LogGroupName: 
+          Fn::Join:
+            - '-'
+            - 
+              - /aws/lambda/${self:service}
+              - ${opt:stage}
+              - cloudtrailListener
+        RetentionInDays: 7
+    ##### CloudTrail Listener Lambda : END #####
+    ##### Alerts Lambda : START #####
+    alertsLambdaRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName:
+          Fn::Join:
+          - '-'
+          -
+            - ${self:service}
+            - ${opt:stage}
+            - !Ref AWS::Region
+            - alertsLambdaRole
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action: sts:AssumeRole
+        Policies:
+          - PolicyName: 
+              Fn::Join:
+              - '-'
+              -
+                - ${opt:stage}
+                - ${self:service}
+                - !Ref AWS::Region
+                - alertsLambdaPolicy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - logs:CreateLogGroup
+                    - logs:CreateLogStream
+                    - logs:PutLogEvents
+                  Resource:
+                    - Fn::Join:
+                      - ':'
+                      -
+                        - arn:aws:logs
+                        - !Ref AWS::Region
+                        - !Ref AWS::AccountId
+                        - log-group:/aws/lambda/slack-channel-alerts-${opt:stage}*:*:*
+    AlertsLogGroup:
+      Properties:
+        LogGroupName: 
+          Fn::Join:
+            - '-'
+            - 
+              - /aws/lambda/${self:service}
+              - ${opt:stage}
+              - alerts
+        RetentionInDays: 7
+    ##### Alerts Lambda : END #####
+    ##### CloudFormation Active Stacks : START #####
+    activeStacksLambdaRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName:
+          Fn::Join:
+          - '-'
+          -
+            - ${self:service}
+            - ${opt:stage}
+            - !Ref AWS::Region
+            - activeStacksLambdaRole
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action: sts:AssumeRole
+        Policies:
+          - PolicyName: 
+              Fn::Join:
+              - '-'
+              -
+                - ${opt:stage}
+                - ${self:service}
+                - !Ref AWS::Region
+                - activeStacksLambdaPolicy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - logs:CreateLogGroup
+                    - logs:CreateLogStream
+                    - logs:PutLogEvents
+                  Resource:
+                    - Fn::Join:
+                      - ':'
+                      -
+                        - arn:aws:logs
+                        - !Ref AWS::Region
+                        - !Ref AWS::AccountId
+                        - log-group:/aws/lambda/slack-channel-alerts-${opt:stage}*:*:*
+          - PolicyName: 
+              Fn::Join:
+              - '-'
+              -
+                - ${opt:stage}
+                - ${self:service}
+                - !Ref AWS::Region
+                - activeStacksSNSPolicy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - sns:Publish
+                  Resource: '*'
+          - PolicyName: 
+              Fn::Join:
+              - '-'
+              -
+                - ${opt:stage}
+                - ${self:service}
+                - !Ref AWS::Region
+                - cfn-get-stacks-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - cloudformation:DescribeStacks
+                  Resource:
+                    - '*'
+    ActiveStacksLogGroup:
+      Properties:
+        LogGroupName: 
+          Fn::Join:
+            - '-'
+            - 
+              - /aws/lambda/${self:service}
+              - ${opt:stage}
+              - activeStacks
+        RetentionInDays: 7
+    ##### CloudFormation Active Stacks : START #####
