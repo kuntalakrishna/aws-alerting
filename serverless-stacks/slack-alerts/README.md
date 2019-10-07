@@ -8,32 +8,50 @@ This stack creates a SNS topic, **slack-alerts** lambda, **cloudformation-active
 ```
 npm install
 
-SLACK_CHANNEL='<SLACK-CHANNEL-NAME>' SLACK_WEBHOOK_URL='<SLACK-WEBHOOK-URL>' serverless deploy --aws-profile <aws-profile-name> --region <region> --stage <stage>
+SLACK_CHANNEL='<SLACK-CHANNEL-NAME>' \
+SLACK_WEBHOOK_URL='<SLACK-WEBHOOK-URL>' \
+serverless deploy --aws-profile <aws-profile-name> \
+--region <region> \
+--stage <stage>
 ```
 
 ## Destroying serverless stack on AWS
 ```
-serverless remove --aws-profile <aws-profile-name> --region <region> --stage <stage>
+serverless remove --aws-profile <aws-profile-name> \
+--region <region> \
+--stage <stage>
 ```
 
 ## Testing
 ### Testing slack-alerts function
 ```
-serverless invoke -f alerts --aws-profile <aws-profile-name> --region <region> --stage <stage> --path alerts/test/test-slack-alerts.json
+serverless invoke -f alerts --aws-profile <aws-profile-name> \
+--region <region> \
+--stage <stage> \
+--path alerts/test/test-slack-alerts.json
 ```
 
 ### Testing cloudformation-active-stacks function
 ```
-serverless invoke -f activeStacks --aws-profile <aws-profile-name> --region <region> --stage <stage> --path cloudformation-active-stacks/test/test-active-stacks.json
+serverless invoke -f activeStacks --aws-profile <aws-profile-name> \
+--region <region> \
+--stage <stage> \
+--path cloudformation-active-stacks/test/test-active-stacks.json
 ```
 
 ### Testing cloudtrail-listener function
 #### Windows
 ```
-7z a cloudtrail-listener/test/test-event.gz cloudtrail-listener/test/test-event.json && aws s3 rm s3://<aws-account-number>-cloudtrail-logs/test/test-event.gz --profile <aws-profile-name> && aws s3 cp cloudtrail-listener/test/test-event.gz s3://<aws-account-number>-cloudtrail-logs/test/test-event.gz --profile <aws-profile-name> && rm cloudtrail-listener/test/test-event.gz
+7z a cloudtrail-listener/test/test-event.gz cloudtrail-listener/test/test-event.json && \
+aws s3 rm s3://<aws-account-number>-cloudtrail-logs/test/test-event.gz --profile <aws-profile-name> && \
+aws s3 cp cloudtrail-listener/test/test-event.gz s3://<aws-account-number>-cloudtrail-logs/test/test-event.gz --profile <aws-profile-name> && \
+rm cloudtrail-listener/test/test-event.gz
 ```
 
 #### Linux or MacOs
 ```
-gzip -c cloudtrail-listener/test/test-event.json > cloudtrail-listener/test/test-event.gz && aws s3 rm s3://<aws-account-number>-cloudtrail-logs/test/test-event.gz --profile <aws-profile-name> && aws s3 cp cloudtrail-listener/test/test-event.gz s3://<aws-account-number>-cloudtrail-logs/test/test-event.gz --profile <aws-profile-name> && rm cloudtrail-listener/test/test-event.gz
+gzip -c cloudtrail-listener/test/test-event.json > cloudtrail-listener/test/test-event.gz && \
+aws s3 rm s3://<aws-account-number>-cloudtrail-logs/test/test-event.gz --profile <aws-profile-name> && \
+aws s3 cp cloudtrail-listener/test/test-event.gz s3://<aws-account-number>-cloudtrail-logs/test/test-event.gz --profile <aws-profile-name> && \
+rm cloudtrail-listener/test/test-event.gz
 ```
