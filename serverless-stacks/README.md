@@ -19,3 +19,5 @@ As part of this stack, an SNS Topic is created to which a `slack-alerts` lambda 
 * [Node package manager](https://www.npmjs.com/get-npm)
 * [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
 * [Serverless framework](https://serverless.com/framework/docs/getting-started/)
+
+**Note:** Please ignore the parameter ```--aws-profile <aws-profile-name>``` for all the serverless commands if you have only one profile setup for AWS CLI on your machine.
