@@ -1,24 +1,53 @@
 events:
-  # Event source is AWS Parameter Store and event type is GetParameter
 - eventSource: ssm.amazonaws.com
   eventType: GetParameter
   exclusions:
-    # Exclude the trail if userAgent value contains either "exec-env/AWS_ECS_FARGATE" or "cloudformation.amazonaws.com".
   - paramKey: userAgent
     pattern: exec-env/AWS_ECS_FARGATE
   - paramKey: userAgent
     pattern: cloudformation.amazonaws.com
-    # Exclude the trail if resource.ARN contains "/environment/test/database_password"
   - paramKey: resources.ARN
     pattern: "/environment/test/database_password"
-  # Event source is AWS KMS and event type is DescribeKey
 - eventSource: kms.amazonaws.com
   eventType: DescribeKey
   exclusions:
-    # Exclude the trail if userAgent value contains either "exec-env/AWS_ECS_FARGATE", "lambda.amazonaws.com" or "cloudformation.amazonaws.com".
   - paramKey: userAgent
     pattern: exec-env/AWS_ECS_FARGATE
   - paramKey: userAgent
     pattern: cloudformation.amazonaws.com
   - paramKey: userAgent
     pattern: lambda.amazonaws.com
+
+  ---
+events:
+  # Event source is AWS Parameter Store and event type is GetParameter
+- eventSource: ssm.amazonaws.com
+  eventType: GetParameter
+  exclusions:
+    # Exclude the trail if userAgent value contains either "exec-env/AWS_ECS_FARGATE" or "cloudformation.amazonaws.com"
+  - paramKey: userAgent
+    pattern: exec-env/AWS_ECS_FARGATE
+  - paramKey: userAgent
+    pattern: cloudformation.amazonaws.com
+    # Exclude the trail if resource.ARN contains "/environment/test/database_password", "/environment/uat/vsc/database_password" or "/environment/preprod/vsc/database_password"
+  - paramKey: resources.ARN
+    pattern: "/environment/preprod/vsc/database_password"
+  - paramKey: resources.ARN
+    pattern: "/environment/uat/vsc/database_password"
+  - paramKey: resources.ARN
+    pattern: "/environment/test/vsc/database_password"
+  # Event source is AWS KMS and event type is DescribeKey
+- eventSource: kms.amazonaws.com
+  eventType: DescribeKey
+  exclusions:
+    # Exclude the trail if userAgent value contains either "exec-env/AWS_ECS_FARGATE", "lambda.amazonaws.com" or "rds.amazonaws.com", "acm.amazonaws.com", "cloudformation.amazonaws.com"
+  - paramKey: userAgent
+    pattern: exec-env/AWS_ECS_FARGATE
+  - paramKey: userAgent
+    pattern: cloudformation.amazonaws.com
+  - paramKey: userAgent
+    pattern: lambda.amazonaws.com
+  - paramKey: userAgent
+    pattern: rds.amazonaws.com
+  - paramKey: userAgent
+    pattern: acm.amazonaws.com
