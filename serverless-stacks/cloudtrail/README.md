@@ -3,10 +3,15 @@ This serverless stack will create a cloudtrail and an S3 bucket (name: `<aws-acc
 
 ### Deploying cloudtrail serverless stack on AWS
 ```
-serverless deploy --aws-profile <aws-profile-name> --region <region> --stage <stage>
+serverless deploy --aws-profile <aws-profile-name> \
+--region <region> \
+--stage <stage>
 ```
 
 ### Destroying cloudtrail serverless stack
 ```
-aws s3 rm s3://<aws-account-id>-cloudtrail-logs --profile <aws-profile-name> --recursive && serverless remove --aws-profile <aws-profile-name> --region eu-west-2 --stage dev
+aws s3 rm s3://<aws-account-id>-cloudtrail-logs --profile <aws-profile-name> --recursive && \
+serverless remove --aws-profile <aws-profile-name> \
+--region eu-west-2 \
+--stage dev
 ```

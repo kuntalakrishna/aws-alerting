@@ -16,6 +16,6 @@ This stack creates a CloudTrail which posts the trails periodically to S3. As AW
 As part of this stack, an SNS Topic is created to which a `slack-alerts` lambda is subscribed. As soon as a message is published on this SNS Topic, alerts lambda captures it and sends an alert to Slack by formatting a message which is consumable by Slack. `cloudformation-active-stacks` checks for the active stacks periodically (configurable value which is currently set as  everyday at `18:00` and `22:00` as part of this stack). If there are any stacks active, it constructs a message and posts it to the above mentioned SNS Topic which is in turn alerted on Slack. `cloudtrail-listener` lambda subscribes itself for cloudtrail S3 bucket put object events and parses the json data to find relative events. It only looks for the events configured in `event-filters.yml` file where you can specify ignore/exclude filters for particular events.
 
 # Pre-requisites
-AWS CLI
-Serverless framework
-Node package manager
+* [Node package manager](https://www.npmjs.com/get-npm)
+* [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
+* [Serverless framework](https://serverless.com/framework/docs/getting-started/)
