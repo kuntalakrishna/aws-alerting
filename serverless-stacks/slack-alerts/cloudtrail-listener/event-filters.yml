@@ -1,25 +1,4 @@
 events:
-- eventSource: ssm.amazonaws.com
-  eventType: GetParameter
-  exclusions:
-  - paramKey: userAgent
-    pattern: exec-env/AWS_ECS_FARGATE
-  - paramKey: userAgent
-    pattern: cloudformation.amazonaws.com
-  - paramKey: resources.ARN
-    pattern: "/environment/test/database_password"
-- eventSource: kms.amazonaws.com
-  eventType: DescribeKey
-  exclusions:
-  - paramKey: userAgent
-    pattern: exec-env/AWS_ECS_FARGATE
-  - paramKey: userAgent
-    pattern: cloudformation.amazonaws.com
-  - paramKey: userAgent
-    pattern: lambda.amazonaws.com
-
-  ---
-events:
   # Event source is AWS Parameter Store and event type is GetParameter
 - eventSource: ssm.amazonaws.com
   eventType: GetParameter
