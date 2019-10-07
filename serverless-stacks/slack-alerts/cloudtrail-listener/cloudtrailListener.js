@@ -2,6 +2,7 @@ var aws  = require('aws-sdk');
 var zlib = require('zlib');
 var async = require('async');
 const fs = require('fs');
+var yaml = require('js-yaml');
 
 var EVENT_SOURCE_TO_TRACK = /ssm.amazonaws.com/;  
 var EVENT_NAME_TO_TRACK   = /GetParameter/; 
@@ -35,8 +36,8 @@ exports.handler = function(event, context, callback) {
         function publishNotifications(jsonBuffer, next) {
             try {
                 console.log('Reading event filters file: event-filters.json');
-                var fileData = fs.readFileSync('cloudtrail-listener/event-filters.json');
-                var eventFilters = JSON.parse(fileData);
+                var fileData = fs.readFileSync('cloudtrail-listener/event-filters.yml');
+                var eventFilters = yaml.safeLoad(fileData, 'utf8');;
                 console.log(eventFilters);
 
                 console.log('Filtering logs...');
