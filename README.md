@@ -6,10 +6,11 @@ These serverless stacks helps you monitor active cloudformation stacks and restr
 As part of this stack it creates
 1. CloudTrail
 2. S3 bucket for cloudtrail logs
-3. SNS Topic for posting messages to slack
-4. Slack Alerts Lambda
-5. CloudTrail S3 bucket Listener Lambda
-6. Periodic check for Active CloudFormation stacks to save the cost
+3. CloudTrail Filter Lambda
+4. SNS Topic
+5. Slack Alerts Lambda
+6. CloudWatch Rules for periodic checks of active stacks
+7. Active Stacks Lambda
 
 ## CloudTrail Serverless stack
 This stack creates a CloudTrail which posts the trails periodically to S3. As AWS suggests, the first copy of CloudTrail is free, so this trail will not incurr any cost. However, depending on the size of Trails, you might incurr **S3 storage charges** which would be very minimal (either $0.00 or not more than few cents a month).
