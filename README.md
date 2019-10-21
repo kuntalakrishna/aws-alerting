@@ -12,12 +12,12 @@ As part of this stack it creates
 6. CloudWatch Rules for periodic checks of active stacks
 7. Active Stacks Lambda
 
-## CloudTrail Serverless stack
+## CloudTrail serverless stack
 This stack creates a CloudTrail which posts the trails periodically to S3. As AWS suggests, the first copy of CloudTrail is free, so this trail will not incurr any cost. However, depending on the size of Trails, you might incurr **S3 storage charges** which would be very minimal (either $0.00 or not more than few cents a month).
 
 Follow the instructions at [CloudTrail](cloudtrail/README.md) to create this stack on AWS.
 
-## Slack Alerts Serverless stack
+## Slack Alerts serverless stack
 As part of this stack, an SNS Topic is created to which a `slack-alerts` lambda is subscribed. As soon as a message is published on this SNS Topic, alerts lambda captures it and sends an alert to Slack by formatting a message which is consumable by Slack.
 
 `cloudformation-active-stacks` checks for the active stacks periodically (configurable value which is currently set as  everyday at `18:00` and `22:00` as part of this stack). If there are any stacks active, it constructs a message and posts it to the above mentioned SNS Topic which is in turn sends an alert to the slack channel.
