@@ -1,5 +1,5 @@
 # Introduction
-This serverless stack will create a cloudtrail and an S3 bucket (name: `<aws-account-id>-cloudtrail-logs`). The trails are stored in S3 bucket (stored only for 1 day to minimize S3 storage cost) and the triggers are added to notify a lambda when the trails are added. The trigger is added as part of stack creation of [slack-alerts](../slack-alerts/README.md).
+This serverless stack will create a cloudtrail and an S3 bucket (name: `<aws-account-id>-cloudtrail-logs`). The trails are stored for only 1 day in S3 bucket to minimize the cost and the triggers are added to notify a lambda when the trails are published by AWS. The trigger is added as part of stack creation of [slack-alerts](../slack-alerts/README.md).
 
 
 **Note:** Please ignore the parameter ```--aws-profile <aws-profile-name>``` for all the serverless commands if you have only one profile setup for AWS CLI on your machine.
