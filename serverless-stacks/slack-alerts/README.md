@@ -3,6 +3,9 @@ This stack creates a SNS topic, **slack-alerts** lambda, **cloudformation-active
 
 **cloudtrail-listetner** lambda registers itself to a trigger for cloudtrail S3 bucket's PUT events. Whenever a new trail is published to S3 bucket, this trigger will invoke **cloudtrail-listetner** lambda which will scan through the published trail (JSON) to find out the events of our interest. The events which needs to be alerted can be specified in [event-filters.yml](cloudtrail-listener/event-filters.yml) file. You can apply exclusions as well for these cloudtrail alerting. Exclusion is handy where you don't want to be alerted if the resource is accessed as a result of automated deployment and you want catch only if someone manually tries to access the restricted resource.
 
+
+**Note:** Please ignore the parameter ```--aws-profile <aws-profile-name>``` for all the serverless commands if you have only one profile setup for AWS CLI on your machine.
+
 ## Deploying serverless stack on AWS
 
 ```

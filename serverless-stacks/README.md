@@ -12,12 +12,14 @@ As part of this complete stack it creates
 ## CloudTrail Serverless stack
 This stack creates a CloudTrail which posts the trails periodically to S3. As AWS suggests, the first copy of CloudTrail is free, so this will not incurr any cost. Depending on the size of Trails, you might incurr S3 storage charges. However, these charges for S3 storage would be very minimal (either $0.00 or not more than few cents a month). To create this stack, follow the steps mentioned in cloudtrail/README.md
 
+Follow the instructions at [CloudTrail](cloudtrail/README.md) to create this stack on AWS.
+
 ## Slack Alerts Serverless stack
 As part of this stack, an SNS Topic is created to which a `slack-alerts` lambda is subscribed. As soon as a message is published on this SNS Topic, alerts lambda captures it and sends an alert to Slack by formatting a message which is consumable by Slack. `cloudformation-active-stacks` checks for the active stacks periodically (configurable value which is currently set as  everyday at `18:00` and `22:00` as part of this stack). If there are any stacks active, it constructs a message and posts it to the above mentioned SNS Topic which is in turn alerted on Slack. `cloudtrail-listener` lambda subscribes itself for cloudtrail S3 bucket put object events and parses the json data to find relative events. It only looks for the events configured in [event-filters.yml](slack-alerts/cloudtrail-listener/event-filters.yml) file where you can specify ignore/exclude filters for particular events.
+
+Follow the instructions at [Slack Alerts](slack-alerts/README.md) to create this stack on AWS.
 
 # Pre-requisites
 * [Node package manager](https://www.npmjs.com/get-npm)
 * [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
 * [Serverless framework](https://serverless.com/framework/docs/getting-started/)
-
-**Note:** Please ignore the parameter ```--aws-profile <aws-profile-name>``` for all the serverless commands if you have only one profile setup for AWS CLI on your machine.
