@@ -30,3 +30,4 @@ Follow the instructions at [Slack Alerts](slack-alerts/README.md) to create this
 * [Node package manager](https://www.npmjs.com/get-npm)
 * [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
 * [Serverless framework](https://serverless.com/framework/docs/getting-started/)
+* [7-Zip (Windows)](https://www.7-zip.org/download.html)
