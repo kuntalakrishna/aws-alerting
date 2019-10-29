@@ -23,6 +23,7 @@ functions:
               - !Ref AWS::Region
               - !Ref AWS::AccountId
               - sns_slack_alerts
+      DEPLOYMENT_REGION: !Ref AWS::Region
     role: cloudtrailListenerLambdaRole
   ##### CloudTrail Listener Lambda : END #####
 

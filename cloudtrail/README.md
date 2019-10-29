@@ -15,6 +15,6 @@ serverless deploy --aws-profile <aws-profile-name> \
 ```
 aws s3 rm s3://<aws-account-id>-cloudtrail-logs --profile <aws-profile-name> --recursive && \
 serverless remove --aws-profile <aws-profile-name> \
---region eu-west-2 \
---stage dev
+--region <region> \
+--stage <stage>
 ```

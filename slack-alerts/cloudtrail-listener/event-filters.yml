@@ -1,25 +1,26 @@
 events:
+  # You can configure multiple "eventSource" in this file
   # Event source is AWS Parameter Store and event type is GetParameter
 - eventSource: ssm.amazonaws.com
   eventType: GetParameter
   exclusions:
-    # Exclude the trail if userAgent value contains either "exec-env/AWS_ECS_FARGATE" or "cloudformation.amazonaws.com"
+    # Exclude the trail from alerting if userAgent value contains either "exec-env/AWS_ECS_FARGATE" or "cloudformation.amazonaws.com"
   - paramKey: userAgent
     pattern: exec-env/AWS_ECS_FARGATE
   - paramKey: userAgent
     pattern: cloudformation.amazonaws.com
-    # Exclude the trail if resource.ARN contains "/environment/test/database_password", "/environment/uat/vsc/database_password" or "/environment/preprod/vsc/database_password"
+    # Exclude the trail from alerting if resource.ARN contains "/environment/test/database_password", "/environment/uat/service/database_password" or "/environment/preprod/service/database_password"
   - paramKey: resources.ARN
-    pattern: "/environment/preprod/vsc/database_password"
+    pattern: "/environment/preprod/service/database_password"
   - paramKey: resources.ARN
-    pattern: "/environment/uat/vsc/database_password"
+    pattern: "/environment/uat/service/database_password"
   - paramKey: resources.ARN
-    pattern: "/environment/test/vsc/database_password"
+    pattern: "/environment/test/service/database_password"
   # Event source is AWS KMS and event type is DescribeKey
 - eventSource: kms.amazonaws.com
   eventType: DescribeKey
   exclusions:
-    # Exclude the trail if userAgent value contains either "exec-env/AWS_ECS_FARGATE", "lambda.amazonaws.com" or "rds.amazonaws.com", "acm.amazonaws.com", "cloudformation.amazonaws.com"
+    # Exclude the trail from alerting if userAgent value contains either "exec-env/AWS_ECS_FARGATE", "lambda.amazonaws.com" or "rds.amazonaws.com", "acm.amazonaws.com", "cloudformation.amazonaws.com"
   - paramKey: userAgent
     pattern: exec-env/AWS_ECS_FARGATE
   - paramKey: userAgent

@@ -30,7 +30,7 @@
        "sourceIPAddress": "148.252.244.102",
        "userAgent": "aws-internal/3 aws-sdk-java/1.11.621 Linux/4.9.184-0.1.ac.235.83.329.metal1.x86_64 OpenJDK_64-Bit_Server_VM/25.222-b10 java/1.8.0_222 vendor/Oracle_Corporation",
        "requestParameters": {
-         "name": "/environment/preprod/vsc/database_password",
+         "name": "/environment/preprod/service/database_password",
          "withDecryption": true
        },
        "responseElements": null,
@@ -39,7 +39,7 @@
        "resources": [
          {
            "accountId": "<your-account-id>",
-           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/preprod/vsc/database_password"
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/preprod/service/database_password"
          }
        ],
        "eventType": "AwsApiCall",
@@ -75,7 +75,7 @@
        "sourceIPAddress": "148.252.244.102",
        "userAgent": "aws-internal/3 aws-sdk-java/1.11.621 Linux/4.9.184-0.1.ac.235.83.329.metal1.x86_64 OpenJDK_64-Bit_Server_VM/25.222-b10 java/1.8.0_222 vendor/Oracle_Corporation",
        "requestParameters": {
-         "name": "/environment/uat/vsc/database_password",
+         "name": "/environment/uat/service/database_password",
          "withDecryption": true
        },
        "responseElements": null,
@@ -84,7 +84,7 @@
        "resources": [
          {
            "accountId": "<your-account-id>",
-           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/uat/vsc/database_password"
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/uat/service/database_password"
          }
        ],
        "eventType": "AwsApiCall",
@@ -120,7 +120,7 @@
        "sourceIPAddress": "148.252.244.102",
        "userAgent": "aws-internal/3 aws-sdk-java/1.11.621 Linux/4.9.184-0.1.ac.235.83.329.metal1.x86_64 OpenJDK_64-Bit_Server_VM/25.222-b10 java/1.8.0_222 vendor/Oracle_Corporation",
        "requestParameters": {
-         "name": "/environment/preprod/vsc/ca_cert",
+         "name": "/environment/preprod/service/ca_cert",
          "withDecryption": true
        },
        "responseElements": null,
@@ -129,7 +129,7 @@
        "resources": [
          {
            "accountId": "<your-account-id>",
-           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/preprod/vsc/ca_cert"
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/preprod/service/ca_cert"
          }
        ],
        "eventType": "AwsApiCall",
@@ -203,7 +203,7 @@
        "sourceIPAddress": "18.130.50.227",
        "userAgent": "aws-cli/1.16.239 Python/2.7.12 Linux/4.14.133-113.112.amzn2.x86_64 exec-env/AWS_ECS_FARGATE botocore/1.12.229",
        "requestParameters": {
-         "name": "/environment/test/vsc/ca_cert",
+         "name": "/environment/test/service/ca_cert",
          "withDecryption": true
        },
        "responseElements": null,
@@ -212,7 +212,7 @@
        "resources": [
          {
            "accountId": "<your-account-id>",
-           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/test/vsc/ca_cert"
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/test/service/ca_cert"
          }
        ],
        "eventType": "AwsApiCall",
@@ -248,7 +248,7 @@
        "sourceIPAddress": "18.130.50.227",
        "userAgent": "aws-cli/1.16.239 Python/2.7.12 Linux/4.14.133-113.112.amzn2.x86_64 exec-env/AWS_ECS_FARGATE botocore/1.12.229",
        "requestParameters": {
-         "name": "/environment/test/vsc/private_key",
+         "name": "/environment/test/service/private_key",
          "withDecryption": true
        },
        "responseElements": null,
@@ -257,7 +257,7 @@
        "resources": [
          {
            "accountId": "<your-account-id>",
-           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/test/vsc/private_key"
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/test/service/private_key"
          }
        ],
        "eventType": "AwsApiCall",
@@ -295,7 +295,7 @@
        "userAgent": "cloudformation.amazonaws.com",
        "requestParameters": {
          "names": [
-           "/environment/test/vsc/database_password:1"
+           "/environment/test/service/database_password:1"
          ],
          "withDecryption": true
        },
@@ -305,7 +305,7 @@
        "resources": [
          {
            "accountId": "<your-account-id>",
-           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/test/vsc/database_password"
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/test/service/database_password"
          }
        ],
        "eventType": "AwsApiCall",
@@ -343,7 +343,7 @@
        "userAgent": "cloudformation.amazonaws.com",
        "requestParameters": {
          "names": [
-           "/environment/test/vsc/database_password:1"
+           "/environment/test/service/database_password:1"
          ],
          "withDecryption": true
        },
@@ -353,7 +353,7 @@
        "resources": [
          {
            "accountId": "<your-account-id>",
-           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/test/vsc/database_password"
+           "ARN": "arn:aws:ssm:eu-west-2:<your-account-id>:parameter/environment/test/service/database_password"
          }
        ],
        "eventType": "AwsApiCall",

@@ -4,16 +4,13 @@ var async = require('async');
 const fs = require('fs');
 var yaml = require('js-yaml');
 
-var EVENT_SOURCE_TO_TRACK = /ssm.amazonaws.com/;  
-var EVENT_NAME_TO_TRACK   = /GetParameter/; 
-var DEFAULT_SNS_REGION  = 'eu-west-2';
-
 const ALERTS_PUBLISH_SNS_ARN = process.env.ALERTS_PUBLISH_SNS_ARN;
+const DEPLOYMENT_REGION = process.env.DEPLOYMENT_REGION;
 
 var s3 = new aws.S3();
 var sns = new aws.SNS({
     apiVersion: '2010-03-31',
-    region: DEFAULT_SNS_REGION
+    region: DEPLOYMENT_REGION
 });
 
 exports.handler = function(event, context, callback) {
