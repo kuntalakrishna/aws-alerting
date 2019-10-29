@@ -56,7 +56,7 @@ functions:
           input:
             inputMessage: ":rotating_light::rotating_light::rotating_light::rotating_light:*Stacks still active on AWS*:rotating_light::rotating_light::rotating_light::rotating_light:"
     environment:
-      EXCLUDED_STACKS: ''
+      EXCLUDED_STACKS: 'slack-channel-alerts-dev,slack-channel-alerts-prod,cloudtrail-logs-dev,cloudtrail-logs-prod'
       SLACK_ALERTS_SNS_ARN: 
         Fn::Join:
         - ':'
