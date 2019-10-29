@@ -11,6 +11,9 @@ This stack creates a SNS topic, **slack-alerts** lambda, **cloudformation-active
 **Note:** Please ignore the parameter ```--aws-profile <aws-profile-name>``` for all the serverless commands if you have only one profile setup for AWS CLI on your machine.
 
 ## Deploying serverless stack on AWS
+```
+cd slack-alerts
+```
 
 ```
 npm install
@@ -24,13 +27,6 @@ serverless deploy --aws-profile <aws-profile-name> \
 
 **SLACK-CHANNEL-NAME:** Name of the slack channel on which notifications to be sent
 **SLACK-WEBHOOK-URL:** Slack webhook URL which can be obtained by following the steps listed [here](https://medium.com/@krishnakuntala/aws-codepipeline-slack-integration-41dfaff2414e#bc60).
-
-## Destroying serverless stack on AWS
-```
-serverless remove --aws-profile <aws-profile-name> \
---region <region> \
---stage <stage>
-```
 
 ## Testing
 ### Testing slack-alerts function
@@ -66,4 +62,14 @@ gzip -c cloudtrail-listener/test/test-event.json > cloudtrail-listener/test/test
 aws s3 rm s3://<aws-account-number>-cloudtrail-logs/test/test-event.gz --profile <aws-profile-name> && \
 aws s3 cp cloudtrail-listener/test/test-event.gz s3://<aws-account-number>-cloudtrail-logs/test/test-event.gz --profile <aws-profile-name> && \
 rm cloudtrail-listener/test/test-event.gz
+```
+
+## Destroying serverless stack on AWS
+```
+cd slack-alerts
+```
+```
+serverless remove --aws-profile <aws-profile-name> \
+--region <region> \
+--stage <stage>
 ```
