@@ -26,6 +26,7 @@ serverless deploy --aws-profile <aws-profile-name> \
 ```
 
 **SLACK-CHANNEL-NAME:** Name of the slack channel on which notifications to be sent
+
 **SLACK-WEBHOOK-URL:** Slack webhook URL which can be obtained by following the steps listed [here](https://medium.com/@krishnakuntala/aws-codepipeline-slack-integration-41dfaff2414e#bc60).
 
 ## Testing
