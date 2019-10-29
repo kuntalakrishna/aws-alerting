@@ -3,6 +3,8 @@ These serverless stacks helps you monitor active cloudformation stacks and restr
 
 ![SlackAlerts](images/SlackAlerts.jpg)
 
+**Please refer to my blog on [Medium](https://medium.com/@krishnakuntala/0-00-month-aws-account-security-and-active-cloudformation-stacks-slack-alerting-fac03d2f12fc) for more information.**
+
 As part of this stack it creates
 1. CloudTrail
 2. S3 bucket for cloudtrail logs
