@@ -9,7 +9,7 @@
              "MessageId":"ab1e1dbb-8a21-556d-917a-485cbeef2405",
              "TopicArn":"arn:aws:sns:eu-west-2:<your-account-id>:slack_alerts",
              "Subject":"None",
-             "Message":":rotating_light:This is an alert from AWS stack:rotating_light:",
+             "Message":":rotating_light:This is a test alert from AWS stack:rotating_light:",
              "Timestamp":"2019-09-02T15:17:34.933Z",
              "SignatureVersion":"1",
              "Signature":"Ig0rBx66GBi6oTl+adedXNFA/V4tAHkgfkIoaznKqGIZ82fpBHbE9UgklXzwRsLr8uB3xqAzi5MBTXHG5I9WpwiF76ocPybHHhiibEACz5uWyyl90OWlhP4oMIjAGC7f7SIsMQT8CyoVkXxMdpkVXTAWeCLzCYEilFNtZCuiNhNeseheK0T9TupF+nhJtbJ5Kw6g/U8+Vi6dgBpoXxfZ+hrvYd++am/Kesq4LUaiGSdJsnxkqLAjwHZZl2RBDR/cj7fbhDnlYGuDiGglUUsHX1JaPBaR1cUi9bAbLNJX2+LxVS38r5bx5sDanzCchk5+FAxVOyPA8b9iI1cD1YeDYw==",
