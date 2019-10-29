@@ -29,6 +29,9 @@ serverless deploy --aws-profile <aws-profile-name> \
 **SLACK-WEBHOOK-URL:** Slack webhook URL which can be obtained by following the steps listed [here](https://medium.com/@krishnakuntala/aws-codepipeline-slack-integration-41dfaff2414e#bc60).
 
 ## Testing
+```
+cd slack-alerts
+```
 ### Testing slack-alerts function
 ```
 serverless invoke -f alerts --aws-profile <aws-profile-name> \
