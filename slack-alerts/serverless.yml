@@ -46,12 +46,12 @@ functions:
     handler: cloudformation-active-stacks/active_stacks.lambda_handler
     events:
       - schedule:
-          description: 'Clodwatch event rule to be triggered 18:00 everyday'
+          description: 'Clodwatch event rule to be triggered 18:00 GMT everyday'
           rate: cron(0/60 18 * * ? *)
           input:
             inputMessage: ":rotating_light:*Stacks active on AWS*:rotating_light:"
       - schedule:
-          description: 'Clodwatch event rule to be triggered 22:00 everyday'
+          description: 'Clodwatch event rule to be triggered 22:00 GMT everyday'
           rate: cron(0/60 22 * * ? *)
           input:
             inputMessage: ":rotating_light::rotating_light::rotating_light::rotating_light:*Stacks still active on AWS*:rotating_light::rotating_light::rotating_light::rotating_light:"
