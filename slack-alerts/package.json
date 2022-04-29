@@ -5,7 +5,7 @@
   "author": "Krishna Kuntala",
   "main": "cloudtrail-listener/cloudtrail-listener.js",
   "dependencies": {
-    "async": "^0.9.2",
+    "async": "^2.6.4",
     "fs": "0.0.1-security",
     "js-yaml": "^3.13.1"
   },
